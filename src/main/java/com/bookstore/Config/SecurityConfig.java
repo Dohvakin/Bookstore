@@ -20,11 +20,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private static final String[] PUBLIC_MATCHERS =
 			{
 					"/css/**",
-					"/images/**",
+					"/image/**",
 					"/fonts/**",
 					"/js/**",
 					"/",
-					"/myAccount"
+					"/myAccount",
+					"/myProfile"
 			};
 	@Autowired
 	private Environment env;
@@ -50,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	@Autowired
-	public void configureGlobar(AuthenticationManagerBuilder auth) throws Exception {
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder());
 	}
 }
