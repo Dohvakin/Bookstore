@@ -25,7 +25,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					"/js/**",
 					"/",
 					"/myAccount",
-					"/myProfile"
+					"/myProfile",
+					"/newUser",
+					"/forgetPassword"
 			};
 	@Autowired
 	private Environment env;
