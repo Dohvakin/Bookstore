@@ -1,7 +1,7 @@
-package com.bookstore.Repository;
+package com.bookstore.repository;
 
-import com.bookstore.Domain.User;
-import com.bookstore.Domain.security.PasswordResetToken;
+import com.bookstore.domain.User;
+import com.bookstore.domain.security.PasswordResetToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,7 +18,7 @@ public interface PasswordResetTokenRepository extends JpaRepository<PasswordRese
 	Stream<PasswordResetToken> findAllByExpiryDateLessThan(Date now);
 
 	@Modifying
-	@Query("delete from PasswordResetToken t where t.expiryDate<=?1")
+	@Query("delete from PasswordResetToken t where t.expiryDate <= ?1")
 	void deleteAllExpiredSince(Date now);
 
 }

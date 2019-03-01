@@ -1,12 +1,10 @@
-package com.bookstore.Repository;
+package com.bookstore.repository;
 
-import com.bookstore.Domain.User;
+import com.bookstore.domain.User;
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {
-
 	User findByUsername(String username);
 
 	User findByEmail(String email);
-
 }

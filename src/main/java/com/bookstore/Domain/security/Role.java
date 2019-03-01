@@ -1,4 +1,4 @@
-package com.bookstore.Domain.security;
+package com.bookstore.domain.security;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -10,6 +10,7 @@ public class Role {
 	@Id
 	private int roleId;
 	private String name;
+
 	@OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<UserRole> userRoles = new HashSet<>();
 
@@ -36,4 +37,6 @@ public class Role {
 	public void setUserRoles(Set<UserRole> userRoles) {
 		this.userRoles = userRoles;
 	}
+
+
 }
