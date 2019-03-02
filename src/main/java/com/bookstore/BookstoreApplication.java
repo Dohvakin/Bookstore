@@ -1,10 +1,11 @@
 package com.bookstore;
 
-import com.bookstore.Domain.User;
-import com.bookstore.Domain.security.Role;
-import com.bookstore.Domain.security.UserRole;
-import com.bookstore.Service.impl.UserService;
-import com.bookstore.Utility.SecurityUtility;
+
+import com.bookstore.domain.User;
+import com.bookstore.domain.security.Role;
+import com.bookstore.domain.security.UserRole;
+import com.bookstore.service.UserService;
+import com.bookstore.utility.SecurityUtility;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
