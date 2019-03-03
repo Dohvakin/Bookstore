@@ -15,7 +15,7 @@ import java.util.Set;
 public class User implements UserDetails {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false, updatable = false)
 	private Long id;
 	private String username;
@@ -35,7 +35,6 @@ public class User implements UserDetails {
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -76,6 +75,17 @@ public class User implements UserDetails {
 		this.phone = phone;
 	}
 
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Set<UserRole> getUserRoles() {
+		return userRoles;
+	}
+
+	public void setUserRoles(Set<UserRole> userRoles) {
+		this.userRoles = userRoles;
+	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<GrantedAuthority> authorites = new HashSet<>();
@@ -83,25 +93,16 @@ public class User implements UserDetails {
 
 		return authorites;
 	}
-	public Set<UserRole> getUserRoles() {
-		return userRoles;
-	}
-	public void setUserRoles(Set<UserRole> userRoles) {
-		this.userRoles = userRoles;
-	}
-
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
 		return true;
 	}
-
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
@@ -111,10 +112,6 @@ public class User implements UserDetails {
 	@Override
 	public boolean isEnabled() {
 		return enabled;
-	}
-
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
 	}
 	
 	

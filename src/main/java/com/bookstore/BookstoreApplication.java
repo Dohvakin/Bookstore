@@ -1,6 +1,5 @@
 package com.bookstore;
 
-
 import com.bookstore.domain.User;
 import com.bookstore.domain.security.Role;
 import com.bookstore.domain.security.UserRole;
@@ -18,12 +17,10 @@ import java.util.Set;
 public class BookstoreApplication implements CommandLineRunner {
 
 	@Autowired
-	UserService userService;
+	private UserService userService;
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(BookstoreApplication.class, args);
-
 	}
 
 	@Override
@@ -35,12 +32,11 @@ public class BookstoreApplication implements CommandLineRunner {
 		user1.setPassword(SecurityUtility.passwordEncoder().encode("p"));
 		user1.setEmail("JAdams@gmail.com");
 		Set<UserRole> userRoles = new HashSet<>();
-		Role role = new Role();
-		role.setRoleId(1);
-		role.setName("ROLE_USER");
-		userRoles.add(new UserRole(user1, role));
-
+		Role role1 = new Role();
+		role1.setRoleId(1);
+		role1.setName("ROLE_USER");
+		userRoles.add(new UserRole(user1, role1));
+		
 		userService.createUser(user1, userRoles);
-
 	}
 }
