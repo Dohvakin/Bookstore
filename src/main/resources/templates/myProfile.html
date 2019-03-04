@@ -241,6 +241,17 @@
 															th:value="${userBilling.userBillingZipcode}" />
 													</div>
 												</div>
+                                                <div class="col-xs-4">
+                                                    <div class="form-group">
+                                                        <label for="billingZipcode">* Country</label> <input
+                                                            class="form-control" id="billingCountry"
+                                                            placeholder="Billing Country"
+                                                            required="required"
+                                                            th:name="userBillingCountry"
+                                                            th:value="${userBilling.userBillingCountry}"
+                                                            type="text"/>
+                                                    </div>
+                                                </div>
 											</div>
 
 											<!-- Credit Card Information -->

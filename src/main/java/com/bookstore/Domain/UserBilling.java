@@ -1,13 +1,12 @@
 package com.bookstore.domain;
 
-
 import javax.persistence.*;
 
 @Entity
 public class UserBilling {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String userBillingName;
 	private String userBillingStreet1;
@@ -16,7 +15,6 @@ public class UserBilling {
 	private String userBillingState;
 	private String userBillingCountry;
 	private String userBillingZipcode;
-
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private UserPayment userPayment;
@@ -92,4 +90,6 @@ public class UserBilling {
 	public void setUserPayment(UserPayment userPayment) {
 		this.userPayment = userPayment;
 	}
+
+
 }

@@ -1,16 +1,15 @@
 package com.bookstore.domain;
 
-
 import javax.persistence.*;
 
 @Entity
 public class UserPayment {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String type;
-	private String carName;
+	private String cardName;
 	private String cardNumber;
 	private int expiryMonth;
 	private int expiryYear;
@@ -41,12 +40,12 @@ public class UserPayment {
 		this.type = type;
 	}
 
-	public String getCarName() {
-		return carName;
+	public String getCardName() {
+		return cardName;
 	}
 
-	public void setCarName(String carName) {
-		this.carName = carName;
+	public void setCardName(String cardName) {
+		this.cardName = cardName;
 	}
 
 	public String getCardNumber() {
@@ -112,4 +111,6 @@ public class UserPayment {
 	public void setUserBilling(UserBilling userBilling) {
 		this.userBilling = userBilling;
 	}
+
+
 }
