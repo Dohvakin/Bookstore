@@ -30,4 +30,6 @@ public interface UserService {
 
 	void updateUserShipping(UserShipping userShipping, User user);
 
+	void setDefaultShippingAddress(Long userShippingId, User user);
+
 }
