@@ -161,7 +161,7 @@
 														<td th:text="${userPayment.cardName}"></td>
 														<td><a
 															th:href="@{/updateCreditCard(id=${userPayment.id})}"><i
-																class="fa fa-pencil"></i></a>&nbsp;&nbsp;<a
+                                                                class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
 															th:href="@{/removeCreditCard(id=${userPayment.id})}"><i
 																class="fa fa-times"></i></a></td>
 													</tr>
@@ -203,9 +203,9 @@
 													placeholder="Street Address 1" th:name="userBillingStreet1"
 													required="required"
 													th:value="${userBilling.userBillingStreet1}" /> <input
-													type="text" class="form-control" id="billingAddress"
-													placeholder="Street Address 2" th:name="userBillingStreet2"
-													th:value="${userBilling.userBillingStreet2}" />
+                                                    class="form-control" id="billingAddress1" type="text"
+                                                    placeholder="Street Address 2" th:name="userBillingStreet2"
+                                                    th:value="${userBilling.userBillingStreet2}" />
 											</div>
 
 											<div class="row">
