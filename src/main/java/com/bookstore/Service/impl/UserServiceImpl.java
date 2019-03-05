@@ -3,10 +3,12 @@ package com.bookstore.service.impl;
 import com.bookstore.domain.User;
 import com.bookstore.domain.UserBilling;
 import com.bookstore.domain.UserPayment;
+import com.bookstore.domain.UserShipping;
 import com.bookstore.domain.security.PasswordResetToken;
 import com.bookstore.domain.security.UserRole;
 import com.bookstore.repository.PasswordResetTokenRepository;
 import com.bookstore.repository.RoleRepository;
+import com.bookstore.repository.UserPaymentRepository;
 import com.bookstore.repository.UserRepository;
 import com.bookstore.service.UserService;
 import org.slf4j.Logger;
@@ -14,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -29,6 +32,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private PasswordResetTokenRepository passwordResetTokenRepository;
+
+	@Autowired
+	private UserPaymentRepository userPaymentRepository;
 	
 	@Override
 	public PasswordResetToken getPasswordResetToken(final String token) {
@@ -87,6 +93,28 @@ public class UserServiceImpl implements UserService {
 		userPayment.setDefaultPayment(true);
 		userBilling.setUserPayment(userPayment);
 		user.getUserPaymentList().add(userPayment);
+		save(user);
+	}
+
+	@Override
+	public void setDefaultPayment(Long userPaymentId, User user) {
+		List<UserPayment> userPaymentList = (List<UserPayment>) userPaymentRepository.findAll();
+		for (UserPayment userPayment : userPaymentList) {
+			if (userPayment.getId() == userPaymentId) {
+				userPayment.setDefaultPayment(true);
+				userPaymentRepository.save(userPayment);
+			} else {
+				userPayment.setDefaultPayment(false);
+				userPaymentRepository.save(userPayment);
+			}
+		}
+	}
+
+	@Override
+	public void updateUserShipping(UserShipping userShipping, User user) {
+		userShipping.setUser(user);
+		userShipping.setUserShippingDefault(true);
+		user.getUserShippingList().add(userShipping);
 		save(user);
 	}
 

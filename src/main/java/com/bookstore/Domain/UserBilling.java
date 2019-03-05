@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class UserBilling {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String userBillingName;
 	private String userBillingStreet1;
