@@ -161,7 +161,7 @@
 														<td th:text="${userPayment.cardName}"></td>
 														<td><a
 															th:href="@{/updateCreditCard(id=${userPayment.id})}"><i
-                                                                class="fa fa-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                                                class="fa fa-pencil"></i></a>&nbsp;&nbsp;<a
 															th:href="@{/removeCreditCard(id=${userPayment.id})}"><i
 																class="fa fa-times"></i></a></td>
 													</tr>
@@ -203,9 +203,11 @@
 													placeholder="Street Address 1" th:name="userBillingStreet1"
 													required="required"
 													th:value="${userBilling.userBillingStreet1}" /> <input
-                                                    class="form-control" id="billingAddress1" type="text"
-                                                    placeholder="Street Address 2" th:name="userBillingStreet2"
-                                                    th:value="${userBilling.userBillingStreet2}" />
+                                                    class="form-control" id="billingAddress"
+                                                    placeholder="Street Address 2"
+                                                    th:name="userBillingStreet2"
+                                                    th:value="${userBilling.userBillingStreet2}"
+                                                    type="text"/>
 											</div>
 
 											<div class="row">
@@ -241,17 +243,6 @@
 															th:value="${userBilling.userBillingZipcode}" />
 													</div>
 												</div>
-                                                <div class="col-xs-4">
-                                                    <div class="form-group">
-                                                        <label for="billingZipcode">* Country</label> <input
-                                                            class="form-control" id="billingCountry"
-                                                            placeholder="Billing Country"
-                                                            required="required"
-                                                            th:name="userBillingCountry"
-                                                            th:value="${userBilling.userBillingCountry}"
-                                                            type="text"/>
-                                                    </div>
-                                                </div>
 											</div>
 
 											<!-- Credit Card Information -->
