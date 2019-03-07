@@ -36,4 +36,8 @@ public interface CartItemService {
 	 * @return the cart item
 	 */
 	CartItem addBookToCartItem(Book book, User user, int qty);
+
+	CartItem findById(Long id);
+
+	void removeItem(CartItem cartItem);
 }
