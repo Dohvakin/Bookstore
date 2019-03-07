@@ -15,9 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The type User service.
+ */
 @Service
 public class UserServiceImpl implements UserService {
-	
+
 	private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
 	@Autowired
@@ -34,7 +37,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserShippingRepository userShippingRepository;
-	
+
 	@Override
 	public PasswordResetToken getPasswordResetToken(final String token) {
 		return passwordResetTokenRepository.findByToken(token);

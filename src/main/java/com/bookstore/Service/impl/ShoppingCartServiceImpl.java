@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * The type Shopping cart service.
+ */
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
 

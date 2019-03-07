@@ -5,11 +5,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The type Us constants.
+ */
 public class USConstants {
 
+	/**
+	 * The constant US.
+	 */
 	public final static String US = "US";
-	public final static Map<String, String> mapOfUSStates = new HashMap<String, String>()
-	{
+	/**
+	 * The constant mapOfUSStates.
+	 */
+	public final static Map<String, String> mapOfUSStates = new HashMap<String, String>() {
 		{
 			put("AL", "Alabama");
 			put("AK", "Alaska");
@@ -66,7 +74,13 @@ public class USConstants {
 		}
 	};
 
+	/**
+	 * The constant listOfUSStatesCode.
+	 */
 	public final static List<String> listOfUSStatesCode = new ArrayList<>(mapOfUSStates.keySet());
+	/**
+	 * The constant listOfUSStatesName.
+	 */
 	public final static List<String> listOfUSStatesName = new ArrayList<>(mapOfUSStates.values());
 
 }

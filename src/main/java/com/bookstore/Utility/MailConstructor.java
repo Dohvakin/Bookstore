@@ -8,11 +8,24 @@ import org.springframework.stereotype.Component;
 
 import java.util.Locale;
 
+/**
+ * The type Mail constructor.
+ */
 @Component
 public class MailConstructor {
 	@Autowired
 	private Environment env;
 
+	/**
+	 * Construct reset token email simple mail message.
+	 *
+	 * @param contextPath the context path
+	 * @param locale      the locale
+	 * @param token       the token
+	 * @param user        the user
+	 * @param password    the password
+	 * @return the simple mail message
+	 */
 	public SimpleMailMessage constructResetTokenEmail(
 			String contextPath, Locale locale, String token, User user, String password
 	) {

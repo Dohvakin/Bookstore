@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.security.Principal;
 import java.util.List;
 
+/**
+ * The type Shopping cart controller.
+ */
 @Controller
 @RequestMapping("/shoppingCart")
 public class ShoppingCartController {
@@ -34,6 +37,13 @@ public class ShoppingCartController {
 	@Autowired
 	private BookService bookService;
 
+	/**
+	 * Cart string.
+	 *
+	 * @param model     the model
+	 * @param principal the principal
+	 * @return the string
+	 */
 	@RequestMapping("/cart")
 	public String cart(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -49,6 +59,15 @@ public class ShoppingCartController {
 		return "shoppingCart";
 	}
 
+	/**
+	 * Add item string.
+	 *
+	 * @param book      the book
+	 * @param qty       the qty
+	 * @param model     the model
+	 * @param principal the principal
+	 * @return the string
+	 */
 	@RequestMapping("/addItem")
 	public String addItem(@ModelAttribute("book") Book book, @ModelAttribute("qty") String qty, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());

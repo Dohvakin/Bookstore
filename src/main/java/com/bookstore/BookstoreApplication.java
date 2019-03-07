@@ -13,12 +13,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * The type Bookstore application.
+ */
 @SpringBootApplication
 public class BookstoreApplication implements CommandLineRunner {
 
 	@Autowired
 	private UserService userService;
 
+	/**
+	 * The entry point of application.
+	 *
+	 * @param args the input arguments
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
@@ -36,7 +44,7 @@ public class BookstoreApplication implements CommandLineRunner {
 		role1.setRoleId(1);
 		role1.setName("ROLE_USER");
 		userRoles.add(new UserRole(user1, role1));
-		
+
 		userService.createUser(user1, userRoles);
 	}
 }
