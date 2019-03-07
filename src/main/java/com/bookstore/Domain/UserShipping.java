@@ -14,7 +14,7 @@ public class UserShipping {
 	private String userShippingState;
 	private String userShippingCountry;
 	private String userShippingZipcode;
-	private Boolean userShippingDefault;
+	private boolean userShippingDefault;
 
 
 	@ManyToOne
@@ -111,11 +111,11 @@ public class UserShipping {
 		this.user = user;
 	}
 
-	public Boolean getUserShippingDefault() {
+	public boolean isUserShippingDefault() {
 		return userShippingDefault;
 	}
 
-	public void setUserShippingDefault(Boolean userShippingDefault) {
+	public void setUserShippingDefault(boolean userShippingDefault) {
 		this.userShippingDefault = userShippingDefault;
 	}
 }
