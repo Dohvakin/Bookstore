@@ -19,9 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.security.Principal;
 import java.util.List;
 
-/**
- * The type Shopping cart controller.
- */
 @Controller
 @RequestMapping("/shoppingCart")
 public class ShoppingCartController {
@@ -38,13 +35,6 @@ public class ShoppingCartController {
 	@Autowired
 	private BookService bookService;
 
-	/**
-	 * Cart string.
-	 *
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/cart")
 	public String cart(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -60,15 +50,6 @@ public class ShoppingCartController {
 		return "shoppingCart";
 	}
 
-	/**
-	 * Add item string.
-	 *
-	 * @param book      the book
-	 * @param qty       the qty
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/addItem")
 	public String addItem(@ModelAttribute("book") Book book, @ModelAttribute("qty") String qty, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -80,25 +61,36 @@ public class ShoppingCartController {
 		}
 
 		CartItem cartItem = cartItemService.addBookToCartItem(book, user, Integer.parseInt(qty));
-		model.addAttribute("addBookSuccess", toString());
+		int bookStockNumber = book.getInStockNumber();
+		book.setInStockNumber(bookStockNumber - Integer.parseInt(qty));
+		bookService.updateQty(book);
+		model.addAttribute("addBookSuccess", true);
 
 		return "forward:/bookDetail?id=" + book.getId();
 
 	}
 
 	@RequestMapping("/updateCartItem")
-	public String updateCartItem(@ModelAttribute("id") Long cartItemId, @ModelAttribute("qty") int qty, Model model, Principal principal) {
+	public String updateCartItem(@ModelAttribute("id") Long cartItemId, @ModelAttribute("qty") int qty) {
 		CartItem cartItem = cartItemService.findById(cartItemId);
+		int bookQty = cartItem.getQty();
 		cartItem.setQty(qty);
+		Book book = bookService.findOne(cartItem.getBook().getId());
+		book.setInStockNumber(book.getInStockNumber() + (bookQty - qty));
+		bookService.updateQty(book);
 		cartItemService.updateCartItem(cartItem);
-		return "forward:/shoppingCar/cart";
+		return "forward:/shoppingCart/cart";
 	}
 
 	@RequestMapping("/removeItem")
 	public String removeItem(@RequestParam("id") Long id) {
+		CartItem cartItem = cartItemService.findById(id);
+		Book book = bookService.findOne(cartItem.getBook().getId());
+		int bookQty = cartItem.getQty();
+		book.setInStockNumber(bookQty + book.getInStockNumber());
+		bookService.updateQty(book);
 		cartItemService.removeItem(cartItemService.findById(id));
-
-		return "forward:/shoppingCar/cart";
+		return "forward:/shoppingCart/cart";
 	}
 
 }

@@ -66,7 +66,7 @@
     									</select>
     								</div>
     								<div class="col-xs-6">
-    									<h4 th:if="*{book.inStockNumber&gt;10}" style="color: green">In Stock</h4>
+										<h4 style="color: green" th:if="*{book.inStockNumber&gt;=10}">In Stock</h4>
                                         <h4 style="color: green"
                                             th:if="*{book.inStockNumber&lt;10 and book.inStockNumber&gt;0}">Only <span
                                                 th:text="${book.inStockNumber}"> </span> In Stock</h4>

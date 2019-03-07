@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/**
- * The type User service.
- */
 @Service
 public class UserServiceImpl implements UserService {
 
