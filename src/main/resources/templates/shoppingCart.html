@@ -75,7 +75,7 @@
 								<a th:href="@{/bookDetail?id=}+${cartItem.book.id}"><h4
 										th:text="${cartItem.book.title}"></h4></a>
 								<p style="color: green;"
-								   th:if="${cartItem.book.inStockNumber&gt;10}">In Stock</p>
+								   th:if="${cartItem.book.inStockNumber&gt;=10}">In Stock</p>
 								<p
 										style="color: green;"
 										th:if="${cartItem.book.inStockNumber&lt;10 and cartItem.book.inStockNumber&gt;0}">
