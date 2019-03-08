@@ -61,9 +61,6 @@ public class ShoppingCartController {
 		}
 
 		CartItem cartItem = cartItemService.addBookToCartItem(book, user, Integer.parseInt(qty));
-		int bookStockNumber = book.getInStockNumber();
-		book.setInStockNumber(bookStockNumber - Integer.parseInt(qty));
-		bookService.updateQty(book);
 		model.addAttribute("addBookSuccess", true);
 
 		return "forward:/bookDetail?id=" + book.getId();
@@ -73,22 +70,13 @@ public class ShoppingCartController {
 	@RequestMapping("/updateCartItem")
 	public String updateCartItem(@ModelAttribute("id") Long cartItemId, @ModelAttribute("qty") int qty) {
 		CartItem cartItem = cartItemService.findById(cartItemId);
-		int bookQty = cartItem.getQty();
 		cartItem.setQty(qty);
-		Book book = bookService.findOne(cartItem.getBook().getId());
-		book.setInStockNumber(book.getInStockNumber() + (bookQty - qty));
-		bookService.updateQty(book);
 		cartItemService.updateCartItem(cartItem);
 		return "forward:/shoppingCart/cart";
 	}
 
 	@RequestMapping("/removeItem")
 	public String removeItem(@RequestParam("id") Long id) {
-		CartItem cartItem = cartItemService.findById(id);
-		Book book = bookService.findOne(cartItem.getBook().getId());
-		int bookQty = cartItem.getQty();
-		book.setInStockNumber(bookQty + book.getInStockNumber());
-		bookService.updateQty(book);
 		cartItemService.removeItem(cartItemService.findById(id));
 		return "forward:/shoppingCart/cart";
 	}
