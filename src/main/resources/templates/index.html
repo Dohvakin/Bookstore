@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
 <head th:replace="common/header :: common-header"/>
@@ -6,10 +7,10 @@
 <div th:replace="common/header :: navbar"/>
 
 <div class="container">
-    <div class="row">
+    <div class="row banner">
         <!-- carousel -->
         <div class="col-xs-8">
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="margin-top: 20px;">
                 <div class="panel-body">
                     <div class="carousel slide" data-ride="carousel"
                          id="carousel-example-generic">
@@ -78,12 +79,41 @@
             <img class="img-responsive" src="/image/logo.png"/>
         </div>
     </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-xs-4">
+            <div clas="panel panel-default">
+                <div class="panel-body">
+                    <a th:href="@{/bookshelf}"><img class="img-responsive" src="/image/bestseller.png"/></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div clas="panel panel-default">
+                <div class="panel-body">
+                    <a th:href="@{/hours}"><img class="img-responsive" src="/image/hours.png"/></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div clas="panel panel-default">
+                <div class="panel-body">
+                    <a th:href="@{/faq}"><img class="img-responsive" src="/image/faq.png"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div>
         <div class="home-headline">
             <span>Featured Books</span>
         </div>
         <hr style="margin-top: -15px;"/>
     </div>
+
+
     <div class="row">
         <div class="carousel slide" data-ride="carousel" id="featured-books">
             <!-- Indicators -->
@@ -184,34 +214,11 @@
         </a>
         </div>
     </div>
-    <hr/>
-    <div class="row">
-        <div class="col-xs-4">
-            <div clas="panel panel-default">
-                <div class="panel-body">
-                    <a href="https://www.google.co.in"><img class="img-responsive" src="/image/bestseller.png"/></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4">
-            <div clas="panel panel-default">
-                <div class="panel-body">
-                    <a href="https://www.google.co.in"><img class="img-responsive" src="/image/hours.png"/> </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-4">
-            <div clas="panel panel-default">
-                <div class="panel-body">
-                    <a href="https://www.google.co.in"><img class="img-responsive" src="/image/faq.png"/> </a>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 <!-- end of container -->
 
-
+<div th:replace="common/header :: footer"/>
 <div th:replace="common/header :: body-bottom-scripts"/>
 </body>
 </html>
