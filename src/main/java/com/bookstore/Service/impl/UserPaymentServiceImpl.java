@@ -6,6 +6,9 @@ import com.bookstore.service.UserPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * The type User payment service.
+ */
 @Service
 public class UserPaymentServiceImpl implements UserPaymentService {
 

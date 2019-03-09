@@ -26,6 +26,9 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.util.Properties;
 
+/**
+ * The type Maven wrapper downloader.
+ */
 public class MavenWrapperDownloader {
 
     private static final String DEFAULT_DOWNLOAD_URL =
@@ -39,7 +42,12 @@ public class MavenWrapperDownloader {
 
     private static final String PROPERTY_NAME_WRAPPER_URL = "wrapperUrl";
 
-    public static void main(String args[]) {
+	/**
+	 * Main.
+	 *
+	 * @param args the args
+	 */
+	public static void main(String args[]) {
         System.out.println("- Downloader started");
         File baseDirectory = new File(args[0]);
         System.out.println("- Using base directory: " + baseDirectory.getAbsolutePath());

@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * The type Cart item service.
+ */
 @Service
 public class CartItemServiceImpl implements CartItemService {
 

@@ -6,6 +6,9 @@ import com.bookstore.domain.UserBilling;
 import com.bookstore.service.BillingAddressService;
 import org.springframework.stereotype.Service;
 
+/**
+ * The type Billing address service.
+ */
 @Service
 public class BillingAddressServiceImpl implements BillingAddressService {
 

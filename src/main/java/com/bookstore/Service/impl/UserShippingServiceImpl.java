@@ -6,6 +6,9 @@ import com.bookstore.service.UserShippingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * The type User shipping service.
+ */
 @Service
 public class UserShippingServiceImpl implements UserShippingService {
 

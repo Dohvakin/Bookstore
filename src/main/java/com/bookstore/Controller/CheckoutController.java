@@ -20,6 +20,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * The type Checkout controller.
+ */
 @Controller
 public class CheckoutController {
 
@@ -60,6 +63,15 @@ public class CheckoutController {
 	@Autowired
 	private OrderService orderService;
 
+	/**
+	 * Checkout string.
+	 *
+	 * @param cartId               the cart id
+	 * @param missingRequiredField the missing required field
+	 * @param model                the model
+	 * @param principal            the principal
+	 * @return the string
+	 */
 	@RequestMapping("/checkout")
 	public String checkout(@RequestParam("id") Long cartId, @RequestParam(value = "missingRequiredField", required = false) boolean missingRequiredField, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -132,6 +144,18 @@ public class CheckoutController {
 		return "checkout";
 	}
 
+	/**
+	 * Checkout post string.
+	 *
+	 * @param shippingAddress       the shipping address
+	 * @param billingAddress        the billing address
+	 * @param payment               the payment
+	 * @param billingSameAsShipping the billing same as shipping
+	 * @param shippingMethod        the shipping method
+	 * @param principal             the principal
+	 * @param model                 the model
+	 * @return the string
+	 */
 	@RequestMapping(value = "/checkout", method = RequestMethod.POST)
 	public String checkoutPost(@ModelAttribute("shippingAddress") ShippingAddress shippingAddress, @ModelAttribute("billingAddress") BillingAddress billingAddress, @ModelAttribute("payment") Payment payment, @ModelAttribute("billingSameAsShipping") String billingSameAsShipping, @ModelAttribute("shippingMethod") String shippingMethod, Principal principal, Model model) {
 		ShoppingCart shoppingCart = userService.findByUsername(payment.getCardName()).getShoppingCart();
@@ -181,6 +205,14 @@ public class CheckoutController {
 		return "orderSubmittedPage";
 	}
 
+	/**
+	 * Sets shipping address.
+	 *
+	 * @param userShippingId the user shipping id
+	 * @param principal      the principal
+	 * @param model          the model
+	 * @return the shipping address
+	 */
 	@RequestMapping("/setShippingAddress")
 	public String setShippingAddress(
 			@RequestParam("userShippingId") Long userShippingId,
@@ -230,6 +262,14 @@ public class CheckoutController {
 		}
 	}
 
+	/**
+	 * Sets payment method.
+	 *
+	 * @param userPaymentId the user payment id
+	 * @param principal     the principal
+	 * @param model         the model
+	 * @return the payment method
+	 */
 	@RequestMapping("/setPaymentMethod")
 	public String setPaymentMethod(
 			@RequestParam("userPaymentId") Long userPaymentId,
