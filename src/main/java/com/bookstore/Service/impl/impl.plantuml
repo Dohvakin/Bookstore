@@ -1,0 +1,205 @@
+@startuml
+
+title __IMPL's Class Diagram__\n
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class BillingAddressServiceImpl {
+              + setByUserBilling()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class BookServiceImpl {
+              + findAll()
+              + findOne()
+              + updateQty()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class CartItemServiceImpl {
+              + findByShoppingCart()
+              + updateCartItem()
+              + addBookToCartItem()
+              + findById()
+              + removeItem()
+              + save()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class OrderServiceImpl {
+              + createOrder()
+              + findOne()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class PaymentServiceImpl {
+              + setByUserPayment()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class ShippingAddressServiceImpl {
+              + setByUserShipping()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class ShoppingCartServiceImpl {
+              + updateShoppingCart()
+              + clearShoppingCart()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserPaymentServiceImpl {
+              + findById()
+              + removeById()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserSecurityService {
+              + loadUserByUsername()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserServiceImpl {
+              {static} - LOG : Logger
+              + getPasswordResetToken()
+              + createPasswordResetTokenForUser()
+              + findByUsername()
+              + findByEmail()
+              + createUser()
+              + save()
+              + findById()
+              + updateUserBilling()
+              + setDefaultPayment()
+              + updateUserShipping()
+              + setDefaultShippingAddress()
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserShippingServiceImpl {
+              + findById()
+              + removeById()
+          }
+        }
+      }
+    }
+  }
+  
+
+  BillingAddressServiceImpl -up-|> BillingAddressService
+  BookServiceImpl -up-|> BookService
+  BookServiceImpl o-- BookRepository : bookRepository
+  CartItemServiceImpl -up-|> CartItemService
+  CartItemServiceImpl o-- CartItemRepository : cartItemRepository
+  CartItemServiceImpl o-- BookToCartItemRepository : bookToCartItemRepository
+  OrderServiceImpl -up-|> OrderService
+  OrderServiceImpl o-- OrderRepository : orderRepository
+  OrderServiceImpl o-- CartItemService : cartItemService
+  PaymentServiceImpl -up-|> PaymentService
+  ShippingAddressServiceImpl -up-|> ShippingAddressService
+  ShoppingCartServiceImpl -up-|> ShoppingCartService
+  ShoppingCartServiceImpl o-- CartItemService : cartItemService
+  ShoppingCartServiceImpl o-- ShoppingCartRepository : shoppingCartRepository
+  UserPaymentServiceImpl -up-|> UserPaymentService
+  UserPaymentServiceImpl o-- UserPaymentRepository : userPaymentRepository
+  UserSecurityService -up-|> UserDetailsService
+  UserSecurityService o-- UserRepository : userRepository
+  UserServiceImpl -up-|> UserService
+  UserServiceImpl o-- UserRepository : userRepository
+  UserServiceImpl o-- RoleRepository : roleRepository
+  UserServiceImpl o-- PasswordResetTokenRepository : passwordResetTokenRepository
+  UserServiceImpl o-- UserPaymentRepository : userPaymentRepository
+  UserServiceImpl o-- UserShippingRepository : userShippingRepository
+  UserShippingServiceImpl -up-|> UserShippingService
+  UserShippingServiceImpl o-- UserShippingRepository : userShippingRepository
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,478 @@
+@startuml
+
+title __DOMAIN's Class Diagram__\n
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class BillingAddress {
+            - id : Long
+            - BillingAddressName : String
+            - BillingAddressStreet1 : String
+            - BillingAddressStreet2 : String
+            - BillingAddressCity : String
+            - BillingAddressState : String
+            - BillingAddressCountry : String
+            - BillingAddressZipcode : String
+            + getId()
+            + setId()
+            + getBillingAddressName()
+            + setBillingAddressName()
+            + getBillingAddressStreet1()
+            + setBillingAddressStreet1()
+            + getBillingAddressStreet2()
+            + setBillingAddressStreet2()
+            + getBillingAddressCity()
+            + setBillingAddressCity()
+            + getBillingAddressState()
+            + setBillingAddressState()
+            + getBillingAddressCountry()
+            + setBillingAddressCountry()
+            + getBillingAddressZipcode()
+            + setBillingAddressZipcode()
+            + getOrder()
+            + setOrder()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class Book {
+            - id : Long
+            - title : String
+            - author : String
+            - publisher : String
+            - publicationDate : String
+            - language : String
+            - category : String
+            - numberOfPages : int
+            - format : String
+            - isbn : int
+            - shippingWeight : double
+            - listPrice : double
+            - ourPrice : double
+            - active : boolean
+            - description : String
+            - inStockNumber : int
+            - bookImage : MultipartFile
+            - bookToCartItemList : List<BookToCartItem>
+            + getId()
+            + setId()
+            + getTitle()
+            + setTitle()
+            + getAuthor()
+            + setAuthor()
+            + getPublisher()
+            + setPublisher()
+            + getPublicationDate()
+            + setPublicationDate()
+            + getLanguage()
+            + setLanguage()
+            + getCategory()
+            + setCategory()
+            + getNumberOfPages()
+            + setNumberOfPages()
+            + getFormat()
+            + setFormat()
+            + getIsbn()
+            + setIsbn()
+            + getShippingWeight()
+            + setShippingWeight()
+            + getListPrice()
+            + setListPrice()
+            + getOurPrice()
+            + setOurPrice()
+            + isActive()
+            + setActive()
+            + getDescription()
+            + setDescription()
+            + getInStockNumber()
+            + setInStockNumber()
+            + getBookImage()
+            + setBookImage()
+            + getBookToCartItemList()
+            + setBookToCartItemList()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class BookToCartItem {
+            - id : Long
+            + getId()
+            + setId()
+            + getBook()
+            + setBook()
+            + getCartItem()
+            + setCartItem()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class CartItem {
+            - id : Long
+            - qty : int
+            - subTotal : BigDecimal
+            - bookToCartItemList : List<BookToCartItem>
+            + getId()
+            + setId()
+            + getQty()
+            + setQty()
+            + getSubTotal()
+            + setSubTotal()
+            + getBook()
+            + setBook()
+            + getBookToCartItemList()
+            + setBookToCartItemList()
+            + getShoppingCart()
+            + setShoppingCart()
+            + getOrder()
+            + setOrder()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class Order {
+            - id : Long
+            - orderDate : Date
+            - shippingDate : Date
+            - shippingMethod : String
+            - orderStatus : String
+            - orderTotal : BigDecimal
+            - cartItemList : List<CartItem>
+            + getId()
+            + setId()
+            + getOrderDate()
+            + setOrderDate()
+            + getShippingDate()
+            + setShippingDate()
+            + getShippingMethod()
+            + setShippingMethod()
+            + getOrderStatus()
+            + setOrderStatus()
+            + getOrderTotal()
+            + setOrderTotal()
+            + getCartItemList()
+            + setCartItemList()
+            + getShippingAddress()
+            + setShippingAddress()
+            + getPayment()
+            + setPayment()
+            + getUser()
+            + setUser()
+            + getBillingAddress()
+            + setBillingAddress()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class Payment {
+            - id : Long
+            - type : String
+            - cardName : String
+            - cardNumber : String
+            - expiryMonth : int
+            - expiryYear : int
+            - cvc : int
+            - holderName : String
+            + getId()
+            + setId()
+            + getType()
+            + setType()
+            + getCardName()
+            + setCardName()
+            + getCardNumber()
+            + setCardNumber()
+            + getExpiryMonth()
+            + setExpiryMonth()
+            + getExpiryYear()
+            + setExpiryYear()
+            + getCvc()
+            + setCvc()
+            + getHolderName()
+            + setHolderName()
+            + getUserBilling()
+            + setUserBilling()
+            + getOrder()
+            + setOrder()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class ShippingAddress {
+            - id : Long
+            - ShippingAddressName : String
+            - ShippingAddressStreet1 : String
+            - ShippingAddressStreet2 : String
+            - ShippingAddressCity : String
+            - ShippingAddressState : String
+            - ShippingAddressCountry : String
+            - ShippingAddressZipcode : String
+            + getId()
+            + setId()
+            + getShippingAddressName()
+            + setShippingAddressName()
+            + getShippingAddressStreet1()
+            + setShippingAddressStreet1()
+            + getShippingAddressStreet2()
+            + setShippingAddressStreet2()
+            + getShippingAddressCity()
+            + setShippingAddressCity()
+            + getShippingAddressState()
+            + setShippingAddressState()
+            + getShippingAddressCountry()
+            + setShippingAddressCountry()
+            + getShippingAddressZipcode()
+            + setShippingAddressZipcode()
+            + getOrder()
+            + setOrder()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class ShoppingCart {
+            - id : Long
+            - GrandTotal : BigDecimal
+            - cartItemList : List<CartItem>
+            + getId()
+            + setId()
+            + getGrandTotal()
+            + setGrandTotal()
+            + getCartItemList()
+            + setCartItemList()
+            + getUser()
+            + setUser()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class User {
+            - id : Long
+            - username : String
+            - password : String
+            - firstName : String
+            - lastName : String
+            - email : String
+            - phone : String
+            - enabled : boolean
+            - userShippingList : List<UserShipping>
+            - userPaymentList : List<UserPayment>
+            - userRoles : Set<UserRole>
+            + getId()
+            + setId()
+            + getUsername()
+            + setUsername()
+            + getPassword()
+            + setPassword()
+            + getFirstName()
+            + setFirstName()
+            + getLastName()
+            + setLastName()
+            + getEmail()
+            + setEmail()
+            + getPhone()
+            + setPhone()
+            + getUserShippingList()
+            + setUserShippingList()
+            + getUserPaymentList()
+            + setUserPaymentList()
+            + setEnabled()
+            + getUserRoles()
+            + setUserRoles()
+            + getAuthorities()
+            + isAccountNonExpired()
+            + isAccountNonLocked()
+            + isCredentialsNonExpired()
+            + isEnabled()
+            + getShoppingCart()
+            + setShoppingCart()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class UserBilling {
+            - id : Long
+            - userBillingName : String
+            - userBillingStreet1 : String
+            - userBillingStreet2 : String
+            - userBillingCity : String
+            - userBillingState : String
+            - userBillingCountry : String
+            - userBillingZipcode : String
+            + getId()
+            + setId()
+            + getUserBillingName()
+            + setUserBillingName()
+            + getUserBillingStreet1()
+            + setUserBillingStreet1()
+            + getUserBillingStreet2()
+            + setUserBillingStreet2()
+            + getUserBillingCity()
+            + setUserBillingCity()
+            + getUserBillingState()
+            + setUserBillingState()
+            + getUserBillingCountry()
+            + setUserBillingCountry()
+            + getUserBillingZipcode()
+            + setUserBillingZipcode()
+            + getUserPayment()
+            + setUserPayment()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class UserPayment {
+            - id : Long
+            - type : String
+            - cardName : String
+            - cardNumber : String
+            - expiryMonth : int
+            - expiryYear : int
+            - cvc : int
+            - holderName : String
+            - defaultPayment : boolean
+            + getId()
+            + setId()
+            + getType()
+            + setType()
+            + getCardName()
+            + setCardName()
+            + getCardNumber()
+            + setCardNumber()
+            + getExpiryMonth()
+            + setExpiryMonth()
+            + getExpiryYear()
+            + setExpiryYear()
+            + getCvc()
+            + setCvc()
+            + getHolderName()
+            + setHolderName()
+            + isDefaultPayment()
+            + setDefaultPayment()
+            + getUser()
+            + setUser()
+            + getUserBilling()
+            + setUserBilling()
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class UserShipping {
+            - id : Long
+            - userShippingName : String
+            - userShippingStreet1 : String
+            - userShippingStreet2 : String
+            - userShippingCity : String
+            - userShippingState : String
+            - userShippingCountry : String
+            - userShippingZipcode : String
+            - userShippingDefault : boolean
+            + getId()
+            + setId()
+            + getUserShippingName()
+            + setUserShippingName()
+            + getUserShippingStreet1()
+            + setUserShippingStreet1()
+            + getUserShippingStreet2()
+            + setUserShippingStreet2()
+            + getUserShippingCity()
+            + setUserShippingCity()
+            + getUserShippingState()
+            + setUserShippingState()
+            + getUserShippingCountry()
+            + setUserShippingCountry()
+            + getUserShippingZipcode()
+            + setUserShippingZipcode()
+            + getUser()
+            + setUser()
+            + isUserShippingDefault()
+            + setUserShippingDefault()
+        }
+      }
+    }
+  }
+  
+
+  BillingAddress o-- Order : order
+  BookToCartItem o-- Book : book
+  BookToCartItem o-- CartItem : cartItem
+  CartItem o-- Book : book
+  CartItem o-- ShoppingCart : shoppingCart
+  CartItem o-- Order : order
+  Order o-- ShippingAddress : shippingAddress
+  Order o-- BillingAddress : billingAddress
+  Order o-- Payment : payment
+  Order o-- User : user
+  Payment o-- Order : order
+  Payment o-- UserBilling : userBilling
+  ShippingAddress o-- Order : order
+  ShoppingCart o-- User : user
+  User -up-|> UserDetails
+  User o-- ShoppingCart : shoppingCart
+  UserBilling o-- UserPayment : userPayment
+  UserPayment o-- User : user
+  UserPayment o-- UserBilling : userBilling
+  UserShipping o-- User : user
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
