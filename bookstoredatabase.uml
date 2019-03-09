@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.SCHEMA:bookstoredatabase</OriginalElement>
+  <nodes>
+    <node x="0.0" y="0.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.book</node>
+    <node x="239.0" y="427.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.billing_address</node>
+    <node x="218.0" y="973.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.role</node>
+    <node x="853.0" y="0.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.user_order</node>
+    <node x="0.0" y="722.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.user</node>
+    <node x="0.0" y="973.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.user_role</node>
+    <node x="225.0" y="722.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.cart_item</node>
+    <node x="469.0" y="722.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.password_reset_token</node>
+    <node x="0.0" y="427.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.user_payment</node>
+    <node x="809.0" y="427.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.payment</node>
+    <node x="533.0" y="427.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.user_billing</node>
+    <node x="917.0" y="722.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.book_to_cart_item</node>
+    <node x="564.0" y="0.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.user_shipping</node>
+    <node x="682.0" y="722.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.shopping_cart</node>
+    <node x="257.0" y="0.0">2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.shipping_address</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.49403122130394855" x="546.0" y="534.5" />
+  <SelectedNodes>
+    <node>2c2b9dc5-0949-4c5c-a922-2e6b1dc9c0b4.TABLE:bookstoredatabase.book</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
