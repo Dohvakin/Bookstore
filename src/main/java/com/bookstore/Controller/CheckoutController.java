@@ -2,8 +2,8 @@ package com.bookstore.controller;
 
 import com.bookstore.domain.*;
 import com.bookstore.service.*;
+import com.bookstore.utility.IndianStates;
 import com.bookstore.utility.MailConstructor;
-import com.bookstore.utility.USConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
@@ -122,7 +122,7 @@ public class CheckoutController {
 		model.addAttribute("cartItemList", cartItemList);
 		model.addAttribute("shoppingCart", user.getShoppingCart());
 
-		List<String> stateList = USConstants.listOfUSStatesCode;
+		List<String> stateList = IndianStates.listOfINStatesCode;
 		Collections.sort(stateList);
 		model.addAttribute("stateList", stateList);
 
@@ -210,7 +210,7 @@ public class CheckoutController {
 			model.addAttribute("cartItemList", cartItemList);
 			model.addAttribute("shoppingCart", user.getShoppingCart());
 
-			List<String> stateList = USConstants.listOfUSStatesCode;
+			List<String> stateList = IndianStates.listOfINStatesCode;
 			Collections.sort(stateList);
 			model.addAttribute("stateList", stateList);
 
@@ -258,7 +258,7 @@ public class CheckoutController {
 			model.addAttribute("cartItemList", cartItemList);
 			model.addAttribute("shoppingCart", user.getShoppingCart());
 
-			List<String> stateList = USConstants.listOfUSStatesCode;
+			List<String> stateList = IndianStates.listOfINStatesCode;
 			Collections.sort(stateList);
 			model.addAttribute("stateList", stateList);
 
