@@ -1,6 +1,7 @@
 package com.bookstore.repository;
 
 import com.bookstore.domain.CartItem;
+import com.bookstore.domain.Order;
 import com.bookstore.domain.ShoppingCart;
 import org.springframework.data.repository.CrudRepository;
 
@@ -18,5 +19,7 @@ public interface CartItemRepository extends CrudRepository<CartItem, Long> {
 	 * @return the list
 	 */
 	List<CartItem> findByShoppingCart(ShoppingCart shoppingCart);
+
+	List<CartItem> findByOrder(Order order);
 
 }
