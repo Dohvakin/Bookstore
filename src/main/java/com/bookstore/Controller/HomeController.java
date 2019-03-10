@@ -328,7 +328,7 @@ public class HomeController {
 	 * @return the string
 	 */
 	@RequestMapping(value = "addNewShippingAddress", method = RequestMethod.POST)
-	public String addNewShippingAddress(@ModelAttribute("UserShipping") UserShipping userShipping, Model model, Principal principal) {
+	public String addNewShippingAddress(@ModelAttribute("userShipping") UserShipping userShipping, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
 		userService.updateUserShipping(userShipping, user);
 		model.addAttribute("user", user);
@@ -451,7 +451,7 @@ public class HomeController {
 	 * @return the string
 	 */
 	@RequestMapping(value = "addNewCreditCard", method = RequestMethod.POST)
-	public String addNewCreditCard(@ModelAttribute("UserPayment") UserPayment userPayment, @ModelAttribute("UserBilling") UserBilling userBilling, Model model, Principal principal) {
+	public String addNewCreditCard(@ModelAttribute("userPayment") UserPayment userPayment, @ModelAttribute("userBilling") UserBilling userBilling, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
 		userService.updateUserBilling(userBilling, userPayment, user);
 		model.addAttribute("user", user);
