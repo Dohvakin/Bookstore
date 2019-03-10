@@ -121,6 +121,7 @@ public class CheckoutController {
 		model.addAttribute("billingAddress", billingAddress);
 		model.addAttribute("cartItemList", cartItemList);
 		model.addAttribute("shoppingCart", user.getShoppingCart());
+		model.addAttribute("user", user);
 
 		List<String> stateList = IndianStates.listOfINStatesCode;
 		Collections.sort(stateList);

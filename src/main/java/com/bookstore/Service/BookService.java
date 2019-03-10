@@ -28,5 +28,8 @@ public interface BookService {
 	 *
 	 * @param book the book
 	 */
-	void updateQty(Book book);
+
+	List<Book> findByCategory(String category);
+
+	List<Book> blurrySearch(String title);
 }
