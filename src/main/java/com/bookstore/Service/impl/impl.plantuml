@@ -22,7 +22,8 @@ title __IMPL's Class Diagram__\n
           class BookServiceImpl {
               + findAll()
               + findOne()
-              + updateQty()
+              + findByCategory()
+              + blurrySearch()
           }
         }
       }
@@ -41,6 +42,7 @@ title __IMPL's Class Diagram__\n
               + findById()
               + removeItem()
               + save()
+              + findByOrder()
           }
         }
       }

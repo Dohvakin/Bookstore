@@ -1,0 +1,689 @@
+@startuml
+
+title __BOOKSTORE's Class Diagram__\n
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        package com.bookstore.domain.security {
+          class Authority {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class BillingAddress {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface BillingAddressService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class BillingAddressServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class Book {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface BookRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface BookService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class BookServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class BookToCartItem {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface BookToCartItemRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      class BookstoreApplication {
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class CartItem {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface CartItemRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface CartItemService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class CartItemServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.controller {
+        class CheckoutController {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.controller {
+        class HomeController {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.utility {
+        class IndianStates {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.utility {
+        class MailConstructor {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    class MavenWrapperDownloader {
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class Order {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface OrderRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface OrderService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class OrderServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        package com.bookstore.domain.security {
+          class PasswordResetToken {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface PasswordResetTokenRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class Payment {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface PaymentService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class PaymentServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        package com.bookstore.domain.security {
+          class Role {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface RoleRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.controller {
+        class SearchController {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.config {
+        class SecurityConfig {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.utility {
+        class SecurityUtility {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class ShippingAddress {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface ShippingAddressService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class ShippingAddressServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class ShoppingCart {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.controller {
+        class ShoppingCartController {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface ShoppingCartRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface ShoppingCartService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class ShoppingCartServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class User {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class UserBilling {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class UserPayment {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface UserPaymentRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface UserPaymentService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserPaymentServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface UserRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        package com.bookstore.domain.security {
+          class UserRole {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserSecurityService {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface UserService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.domain {
+        class UserShipping {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.repository {
+        interface UserShippingRepository {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        interface UserShippingService {
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.service {
+        package com.bookstore.service.impl {
+          class UserShippingServiceImpl {
+          }
+        }
+      }
+    }
+  }
+  
+
+  Authority -up-|> GrantedAuthority
+  BillingAddress o-- Order : order
+  BillingAddressServiceImpl -up-|> BillingAddressService
+  BookServiceImpl -up-|> BookService
+  BookServiceImpl o-- BookRepository : bookRepository
+  BookToCartItem o-- Book : book
+  BookToCartItem o-- CartItem : cartItem
+  BookstoreApplication -up-|> CommandLineRunner
+  BookstoreApplication o-- UserService : userService
+  CartItem o-- Book : book
+  CartItem o-- ShoppingCart : shoppingCart
+  CartItem o-- Order : order
+  CartItemServiceImpl -up-|> CartItemService
+  CartItemServiceImpl o-- CartItemRepository : cartItemRepository
+  CartItemServiceImpl o-- BookToCartItemRepository : bookToCartItemRepository
+  CheckoutController o-- ShippingAddress : shippingAddress
+  CheckoutController o-- BillingAddress : billingAddress
+  CheckoutController o-- Payment : payment
+  CheckoutController o-- MailConstructor : mailConstructor
+  CheckoutController o-- UserService : userService
+  CheckoutController o-- CartItemService : cartItemService
+  CheckoutController o-- ShoppingCartService : shoppingCartService
+  CheckoutController o-- ShippingAddressService : shippingAddressService
+  CheckoutController o-- BillingAddressService : billingAddressService
+  CheckoutController o-- PaymentService : paymentService
+  CheckoutController o-- UserShippingService : userShippingService
+  CheckoutController o-- UserPaymentService : userPaymentService
+  CheckoutController o-- OrderService : orderService
+  HomeController o-- MailConstructor : mailConstructor
+  HomeController o-- UserService : userService
+  HomeController o-- UserSecurityService : userSecurityService
+  HomeController o-- BookService : bookService
+  HomeController o-- UserPaymentService : userPaymentService
+  HomeController o-- UserShippingService : userShippingService
+  HomeController o-- OrderService : orderService
+  HomeController o-- CartItemService : cartItemService
+  Order o-- ShippingAddress : shippingAddress
+  Order o-- BillingAddress : billingAddress
+  Order o-- Payment : payment
+  Order o-- User : user
+  OrderServiceImpl -up-|> OrderService
+  OrderServiceImpl o-- OrderRepository : orderRepository
+  OrderServiceImpl o-- CartItemService : cartItemService
+  PasswordResetToken o-- User : user
+  Payment o-- Order : order
+  Payment o-- UserBilling : userBilling
+  PaymentServiceImpl -up-|> PaymentService
+  SearchController o-- UserService : userService
+  SearchController o-- BookService : bookService
+  SecurityConfig -up-|> WebSecurityConfigurerAdapter
+  SecurityConfig o-- UserSecurityService : userSecurityService
+  ShippingAddress o-- Order : order
+  ShippingAddressServiceImpl -up-|> ShippingAddressService
+  ShoppingCart o-- User : user
+  ShoppingCartController o-- UserService : userService
+  ShoppingCartController o-- CartItemService : cartItemService
+  ShoppingCartController o-- ShoppingCartService : shoppingCartService
+  ShoppingCartController o-- BookService : bookService
+  ShoppingCartServiceImpl -up-|> ShoppingCartService
+  ShoppingCartServiceImpl o-- CartItemService : cartItemService
+  ShoppingCartServiceImpl o-- ShoppingCartRepository : shoppingCartRepository
+  User -up-|> UserDetails
+  User o-- ShoppingCart : shoppingCart
+  UserBilling o-- UserPayment : userPayment
+  UserPayment o-- User : user
+  UserPayment o-- UserBilling : userBilling
+  UserPaymentServiceImpl -up-|> UserPaymentService
+  UserPaymentServiceImpl o-- UserPaymentRepository : userPaymentRepository
+  UserRole o-- User : user
+  UserRole o-- Role : role
+  UserSecurityService -up-|> UserDetailsService
+  UserSecurityService o-- UserRepository : userRepository
+  UserServiceImpl -up-|> UserService
+  UserServiceImpl o-- UserRepository : userRepository
+  UserServiceImpl o-- RoleRepository : roleRepository
+  UserServiceImpl o-- PasswordResetTokenRepository : passwordResetTokenRepository
+  UserServiceImpl o-- UserPaymentRepository : userPaymentRepository
+  UserServiceImpl o-- UserShippingRepository : userShippingRepository
+  UserShipping o-- User : user
+  UserShippingServiceImpl -up-|> UserShippingService
+  UserShippingServiceImpl o-- UserShippingRepository : userShippingRepository
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -29,9 +29,6 @@ import javax.websocket.server.PathParam;
 import java.security.Principal;
 import java.util.*;
 
-/**
- * The type Home controller.
- */
 @Controller
 public class HomeController {
 
@@ -62,22 +59,11 @@ public class HomeController {
 	@Autowired
 	private CartItemService cartItemService;
 
-	/**
-	 * Index string.
-	 *
-	 * @return the string
-	 */
 	@RequestMapping("/")
 	public String index() {
 		return "index";
 	}
 
-	/**
-	 * Login string.
-	 *
-	 * @param model the model
-	 * @return the string
-	 */
 	@RequestMapping("/login")
 	public String login(Model model) {
 		model.addAttribute("classActiveLogin", true);
@@ -94,12 +80,6 @@ public class HomeController {
 		return "faq";
 	}
 
-	/**
-	 * Bookshelf string.
-	 *
-	 * @param model the model
-	 * @return the string
-	 */
 	@RequestMapping("/bookshelf")
 	public String bookshelf(Model model) {
 		List<Book> bookList = bookService.findAll();
@@ -108,14 +88,6 @@ public class HomeController {
 		return "bookshelf";
 	}
 
-	/**
-	 * Book detail string.
-	 *
-	 * @param id        the id
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/bookDetail")
 	public String bookDetail(
 			@PathParam("id") Long id, Model model, Principal principal
@@ -138,14 +110,6 @@ public class HomeController {
 		return "bookDetail";
 	}
 
-	/**
-	 * Forget password string.
-	 *
-	 * @param request the request
-	 * @param email   the email
-	 * @param model   the model
-	 * @return the string
-	 */
 	@RequestMapping("/forgetPassword")
 	public String forgetPassword(
 			HttpServletRequest request,
@@ -184,13 +148,6 @@ public class HomeController {
 		return "myAccount";
 	}
 
-	/**
-	 * My profile string.
-	 *
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/myProfile")
 	public String myProfile(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -213,14 +170,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * List of credit cards string.
-	 *
-	 * @param request   the request
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/listOfCreditCards")
 	public String listOfCreditCards(HttpServletRequest request, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -236,14 +185,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * List of shipping addresses string.
-	 *
-	 * @param request   the request
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/listOfShippingAddresses")
 	public String listOfShippingAddresses(HttpServletRequest request, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -259,13 +200,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * Add new credit card string.
-	 *
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("addNewCreditCard")
 	public String addNewCreditCard(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -289,13 +223,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * Add new shipping address string.
-	 *
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("addNewShippingAddress")
 	public String addNewShippingAddress(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -319,14 +246,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * Add new shipping address string.
-	 *
-	 * @param userShipping the user shipping
-	 * @param model        the model
-	 * @param principal    the principal
-	 * @return the string
-	 */
 	@RequestMapping(value = "addNewShippingAddress", method = RequestMethod.POST)
 	public String addNewShippingAddress(@ModelAttribute("userShipping") UserShipping userShipping, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -342,14 +261,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * Update user shipping string.
-	 *
-	 * @param shippingAddressId the shipping address id
-	 * @param principal         the principal
-	 * @param model             the model
-	 * @return the string
-	 */
 	@RequestMapping("/updateUserShipping")
 	public String updateUserShipping(@ModelAttribute("id") Long shippingAddressId, Principal principal, Model model) {
 		User user = userService.findByUsername(principal.getName());
@@ -378,14 +289,6 @@ public class HomeController {
 		}
 	}
 
-	/**
-	 * Sets default shipping address.
-	 *
-	 * @param defaultShippingId the default shipping id
-	 * @param principal         the principal
-	 * @param model             the model
-	 * @return the default shipping address
-	 */
 	@RequestMapping(value = "/setDefaultShippingAddress", method = RequestMethod.POST)
 	public String setDefaultShippingAddress(@ModelAttribute("defaultShippingAddressId") Long defaultShippingId, Principal principal, Model model) {
 		User user = userService.findByUsername(principal.getName());
@@ -410,14 +313,6 @@ public class HomeController {
 		}
 	}
 
-	/**
-	 * Remove user shipping string.
-	 *
-	 * @param userShippingId the user shipping id
-	 * @param principal      the principal
-	 * @param model          the model
-	 * @return the string
-	 */
 	@RequestMapping("/removeUserShipping")
 	public String removeUserShipping(@ModelAttribute("id") Long userShippingId, Principal principal, Model model) {
 		User user = userService.findByUsername(principal.getName());
@@ -441,15 +336,6 @@ public class HomeController {
 		}
 	}
 
-	/**
-	 * Add new credit card string.
-	 *
-	 * @param userPayment the user payment
-	 * @param userBilling the user billing
-	 * @param model       the model
-	 * @param principal   the principal
-	 * @return the string
-	 */
 	@RequestMapping(value = "addNewCreditCard", method = RequestMethod.POST)
 	public String addNewCreditCard(@ModelAttribute("userPayment") UserPayment userPayment, @ModelAttribute("userBilling") UserBilling userBilling, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -465,14 +351,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * Update credit card string.
-	 *
-	 * @param creditCardId the credit card id
-	 * @param principal    the principal
-	 * @param model        the model
-	 * @return the string
-	 */
 	@RequestMapping("/updateCreditCard")
 	public String updateCreditCard(@ModelAttribute("id") Long creditCardId, Principal principal, Model model) {
 		User user = userService.findByUsername(principal.getName());
@@ -503,14 +381,6 @@ public class HomeController {
 		}
 	}
 
-	/**
-	 * Remove credit card string.
-	 *
-	 * @param creditCardId the credit card id
-	 * @param principal    the principal
-	 * @param model        the model
-	 * @return the string
-	 */
 	@RequestMapping("/removeCreditCard")
 	public String removeCreditCard(@ModelAttribute("id") Long creditCardId, Principal principal, Model model) {
 		User user = userService.findByUsername(principal.getName());
@@ -534,14 +404,6 @@ public class HomeController {
 		}
 	}
 
-	/**
-	 * Sets default payment.
-	 *
-	 * @param defaultPaymentId the default payment id
-	 * @param principal        the principal
-	 * @param model            the model
-	 * @return the default payment
-	 */
 	@RequestMapping(value = "/setDefaultPayment", method = RequestMethod.POST)
 	public String setDefaultPayment(@ModelAttribute("defaultUserPaymentId") Long defaultPaymentId, Principal principal, Model model) {
 		User user = userService.findByUsername(principal.getName());
@@ -566,16 +428,6 @@ public class HomeController {
 		}
 	}
 
-	/**
-	 * New user post string.
-	 *
-	 * @param request   the request
-	 * @param userEmail the user email
-	 * @param username  the username
-	 * @param model     the model
-	 * @return the string
-	 * @throws Exception the exception
-	 */
 	@RequestMapping(value = "/newUser", method = RequestMethod.POST)
 	public String newUserPost(
 			HttpServletRequest request,
@@ -630,14 +482,6 @@ public class HomeController {
 	}
 
 
-	/**
-	 * New user string.
-	 *
-	 * @param locale the locale
-	 * @param token  the token
-	 * @param model  the model
-	 * @return the string
-	 */
 	@RequestMapping("/newUser")
 	public String newUser(Locale locale, @RequestParam("token") String token, Model model) {
 		PasswordResetToken passToken = userService.getPasswordResetToken(token);
@@ -664,15 +508,6 @@ public class HomeController {
 		return "myProfile";
 	}
 
-	/**
-	 * Update user info string.
-	 *
-	 * @param user        the user
-	 * @param newPassword the new password
-	 * @param model       the model
-	 * @return the string
-	 * @throws Exception the exception
-	 */
 	@RequestMapping(value = "/updateUserInfo", method = RequestMethod.POST)
 	public String updateUserInfo(
 			@ModelAttribute("user") User user,

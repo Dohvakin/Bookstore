@@ -19,7 +19,8 @@ title __SERVICE's Class Diagram__\n
         interface BookService {
             {abstract} + findAll()
             {abstract} + findOne()
-            {abstract} + updateQty()
+            {abstract} + findByCategory()
+            {abstract} + blurrySearch()
         }
       }
     }
@@ -36,6 +37,7 @@ title __SERVICE's Class Diagram__\n
             {abstract} + findById()
             {abstract} + removeItem()
             {abstract} + save()
+            {abstract} + findByOrder()
         }
       }
     }

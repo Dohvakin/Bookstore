@@ -10,9 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.Calendar;
 import java.util.List;
 
-/**
- * The type Order service.
- */
 @Service
 public class OrderServiceImpl implements OrderService {
 

@@ -6,6 +6,8 @@ title __REPOSITORY's Class Diagram__\n
     package com.bookstore {
       package com.bookstore.repository {
         interface BookRepository {
+            {abstract} + findByCategory()
+            {abstract} + findByTitleContaining()
         }
       }
     }
@@ -28,6 +30,7 @@ title __REPOSITORY's Class Diagram__\n
       package com.bookstore.repository {
         interface CartItemRepository {
             {abstract} + findByShoppingCart()
+            {abstract} + findByOrder()
         }
       }
     }

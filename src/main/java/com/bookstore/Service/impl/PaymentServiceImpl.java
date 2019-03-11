@@ -5,9 +5,6 @@ import com.bookstore.domain.UserPayment;
 import com.bookstore.service.PaymentService;
 import org.springframework.stereotype.Service;
 
-/**
- * The type Payment service.
- */
 @Service
 public class PaymentServiceImpl implements PaymentService {
 

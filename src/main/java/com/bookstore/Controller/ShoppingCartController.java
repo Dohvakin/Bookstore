@@ -19,9 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.security.Principal;
 import java.util.List;
 
-/**
- * The type Shopping cart controller.
- */
 @Controller
 @RequestMapping("/shoppingCart")
 public class ShoppingCartController {
@@ -38,13 +35,6 @@ public class ShoppingCartController {
 	@Autowired
 	private BookService bookService;
 
-	/**
-	 * Cart string.
-	 *
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/cart")
 	public String cart(Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -60,15 +50,6 @@ public class ShoppingCartController {
 		return "shoppingCart";
 	}
 
-	/**
-	 * Add item string.
-	 *
-	 * @param book      the book
-	 * @param qty       the qty
-	 * @param model     the model
-	 * @param principal the principal
-	 * @return the string
-	 */
 	@RequestMapping("/addItem")
 	public String addItem(@ModelAttribute("book") Book book, @ModelAttribute("qty") String qty, Model model, Principal principal) {
 		User user = userService.findByUsername(principal.getName());
@@ -86,13 +67,6 @@ public class ShoppingCartController {
 
 	}
 
-	/**
-	 * Update cart item string.
-	 *
-	 * @param cartItemId the cart item id
-	 * @param qty        the qty
-	 * @return the string
-	 */
 	@RequestMapping("/updateCartItem")
 	public String updateCartItem(@ModelAttribute("id") Long cartItemId, @ModelAttribute("qty") int qty) {
 		CartItem cartItem = cartItemService.findById(cartItemId);
@@ -101,12 +75,6 @@ public class ShoppingCartController {
 		return "forward:/shoppingCart/cart";
 	}
 
-	/**
-	 * Remove item string.
-	 *
-	 * @param id the id
-	 * @return the string
-	 */
 	@RequestMapping("/removeItem")
 	public String removeItem(@RequestParam("id") Long id) {
 		cartItemService.removeItem(cartItemService.findById(id));

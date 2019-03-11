@@ -5,6 +5,20 @@ title __UTILITY's Class Diagram__\n
   package  {
     package com.bookstore {
       package com.bookstore.utility {
+        class IndianStates {
+            {static} + US : String
+            {static} + mapOfINStates : Map<String, String>
+            {static} + listOfINStatesCode : List<String>
+            {static} + listOfInStatesName : List<String>
+        }
+      }
+    }
+  }
+  
+
+  package  {
+    package com.bookstore {
+      package com.bookstore.utility {
         class MailConstructor {
             - env : Environment
             - templateEngine : TemplateEngine
@@ -23,20 +37,6 @@ title __UTILITY's Class Diagram__\n
             {static} - SALT : String
             {static} + passwordEncoder()
             {static} + randomPassword()
-        }
-      }
-    }
-  }
-  
-
-  package  {
-    package com.bookstore {
-      package com.bookstore.utility {
-        class USConstants {
-            {static} + US : String
-            {static} + mapOfUSStates : Map<String, String>
-            {static} + listOfUSStatesCode : List<String>
-            {static} + listOfUSStatesName : List<String>
         }
       }
     }

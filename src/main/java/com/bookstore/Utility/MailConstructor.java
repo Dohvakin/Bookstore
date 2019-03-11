@@ -15,9 +15,6 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Locale;
 
-/**
- * The type Mail constructor.
- */
 @Component
 public class MailConstructor {
 	@Autowired
@@ -26,16 +23,6 @@ public class MailConstructor {
 	@Autowired
 	private TemplateEngine templateEngine;
 
-	/**
-	 * Construct reset token email simple mail message.
-	 *
-	 * @param contextPath the context path
-	 * @param locale      the locale
-	 * @param token       the token
-	 * @param user        the user
-	 * @param password    the password
-	 * @return the simple mail message
-	 */
 	public SimpleMailMessage constructResetTokenEmail(
 			String contextPath, Locale locale, String token, User user, String password
 	) {
@@ -50,14 +37,6 @@ public class MailConstructor {
 		return email;
 	}
 
-	/**
-	 * Construct order confirmation email mime message preparator.
-	 *
-	 * @param user   the user
-	 * @param order  the order
-	 * @param locale the locale
-	 * @return the mime message preparator
-	 */
 	public MimeMessagePreparator constructOrderConfirmationEmail(User user, Order order, Locale locale) {
 		Context context = new Context();
 		context.setVariable("order", order);

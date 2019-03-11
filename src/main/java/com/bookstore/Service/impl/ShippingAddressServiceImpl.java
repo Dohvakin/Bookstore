@@ -6,9 +6,6 @@ import com.bookstore.domain.UserShipping;
 import com.bookstore.service.ShippingAddressService;
 import org.springframework.stereotype.Service;
 
-/**
- * The type Shipping address service.
- */
 @Service
 public class ShippingAddressServiceImpl implements ShippingAddressService {
 

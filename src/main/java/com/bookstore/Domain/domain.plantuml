@@ -295,6 +295,7 @@ title __DOMAIN's Class Diagram__\n
             - enabled : boolean
             - userShippingList : List<UserShipping>
             - userPaymentList : List<UserPayment>
+            - orderList : List<Order>
             - userRoles : Set<UserRole>
             + getId()
             + setId()
@@ -324,6 +325,8 @@ title __DOMAIN's Class Diagram__\n
             + isEnabled()
             + getShoppingCart()
             + setShoppingCart()
+            + getOrderList()
+            + setOrderList()
         }
       }
     }
