@@ -90,6 +90,4 @@ public class UserBilling {
 	public void setUserPayment(UserPayment userPayment) {
 		this.userPayment = userPayment;
 	}
-
-
 }
