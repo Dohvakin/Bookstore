@@ -520,7 +520,7 @@ public class HomeController {
 			throw new Exception("User not found");
 		}
 
-		/*check email already exists*/
+
 		if (userService.findByEmail(user.getEmail()) != null) {
 			if (userService.findByEmail(user.getEmail()).getId() != currentUser.getId()) {
 				model.addAttribute("emailExists", true);
@@ -528,7 +528,7 @@ public class HomeController {
 			}
 		}
 
-		/*check username already exists*/
+
 		if (userService.findByUsername(user.getUsername()) != null) {
 			if (userService.findByUsername(user.getUsername()).getId() != currentUser.getId()) {
 				model.addAttribute("usernameExists", true);
@@ -536,7 +536,7 @@ public class HomeController {
 			}
 		}
 
-//		update password
+
 		if (newPassword != null && !newPassword.isEmpty() && !newPassword.equals("")) {
 			BCryptPasswordEncoder passwordEncoder = SecurityUtility.passwordEncoder();
 			String dbPassword = currentUser.getPassword();
